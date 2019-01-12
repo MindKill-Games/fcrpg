@@ -10,16 +10,13 @@ Include "items.bb"
 ;1 - Bad/Hurt, 0 - Good/Healthy
 
 
-If limb1=1 Or limb2=1 Or limb3=1 Or limb4=1 Or limb5=1 Or bleedout=1 And hurt=0
+If limb1=1 Or limb2=1 Or limb3=1 Or limb4=1 Or limb5=1 Or bleedout=1 And hurt=0 Then hurt=hurt-1
 
-	hurt+1
-
-EndIf 
 
 ;---REPLACE THIS LATER---
 ;Reason: A far better system can be used for this, probable solution would be creating
 ;string variables for states and limb names and using them instead.
-;Comment 2: Now, you might be asking, can´t we just streamline this?, yes, we can, but i´m not in my bethesda mood today.
+;Comment 2: Now, you might be asking, canÂ´t we just streamline this?, yes, we can, but iÂ´m not in my bethesda mood today.
 Function HealthMenu ()
 
 	If limb1=1
@@ -90,7 +87,7 @@ Wend
 
 If limb1=1 Or limb2=1 Or limb3=1 Or limb4=1 Or limb5=1 And limball=0 
 
-	limball=1
+	limball=limball=1
 
 EndIf
 
@@ -118,74 +115,60 @@ Function HealingMenu ()
 
 	If healprompt$ = 1 And limb1=1 And healthkits>=1
 
-		healthkits - 1
+		healthkits=healthkits - 1
 		
-		limb1 - 1
+		limb1=limb1 - 1
 
 		Print "Your right arm has been healed successfully."
 
 		Else
 
-			Print "You can´t do that right now."
+			Print "You canÂ´t do that right now."
 
 	EndIf  
 
 	If healprompt$ = 2 And limb2=1 And healthkits>=1
 
-		healthkits - 1
+		healthkits=healthkits - 1
 
-		limb2 - 1
+		limb2=limb2 - 1
 
 		Print "Your left arm has been healed successfully."
 
 		Else
 
-			Print "You can´t do that right now."
+			Print "You canÂ´t do that right now."
 
 	EndIf
 
 	If healthprompt$ = 3 And limb3=1 And healthkits>=1
 
-		healthkits - 1
+		healthkits=healthkits - 1
 
-		limb2 - 1
+		limb2=limb2 - 1
 
 		Print "Your right leg has been healed successfully."
 
 		Else
 
-			Print "You can´t do that right now."
+			Print "You canÂ´t do that right now."
 
 	EndIf 
 
 	If healthprompt$=4 And limb4=1 And healthkits>=1
 
-		healthkits - 1
+		healthkits=healthkits - 1
 
-		limb2 - 1
+		limb2=limb2 - 1
 
 		Print "Your left leg has been healed successfully."
 
 		Else
 
-			Print "You can´t do that right now."
+			Print "You canÂ´t do that right now."
 
 	EndIf 
 
 	If healthprompt$=5 Then Print "Ok."
 	
 End Function 
-
-
-
-	
-		
-
-		
-
-
-
-
-
-
-
