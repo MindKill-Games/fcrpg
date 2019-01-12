@@ -11,7 +11,7 @@ Dim skillnames$(4)
 	skillnames$(4) = "Intelligence"
 
 
-Function SkillTree () ;This is less than pratical, but it´s the best way to do it when using global vars.
+Function SkillTree () ;This is less than pratical, but itÂ´s the best way to do it when using global vars.
 	
 	Print skillnames$(0)+"="+strength
 	Print skillnames$(1)+"="+speech
@@ -38,18 +38,18 @@ Global cwhiz=0,tfinger=0,extort=0,lpick=0,consul=0,sargeant=0,medium=0
 ;Lockpicker - Allows to lockpick some doors instead of finding the key.
 ;Consul - Will make the player character able to translate foregein languages.
 ;Sargeant - You now have a better chance of talking down all Fort Carson Freedom Militia members below sargeant rank.
-;Medium - You will now be able to evaluate someone´s mental and physicological state.
+;Medium - You will now be able to evaluate someoneÂ´s mental and physicological state.
 
 Function DisplayPerks ()
 
 	If cwhiz=1 Then Print "Computer Whiz - Allows you to brute-force computers instead of having to find a password."
 	If tfinger=1 Then Print "Trigger Finger - Sometimes, the game may tell you when someone is armed."
-	If extort=1 Then Print "Extorter - The game may sometimes tell you if the person you´re talking to holds any important information."
+	If extort=1 Then Print "Extorter - The game may sometimes tell you if the person youÂ´re talking to holds any important information."
 	If consul=1 Then Print "Consul - Will allow you to translate things foregein characters say."
 	If lpick=1 Then Print "Lockpicker - Allows you to try your chance at lockpicking doors instead of finding keys."
 	If sargeant=1 Then Print "Sargeant - You now have a better chance at talking down all FCFM members below Sgt. rank."
 	If medium=1
-		Print "Medium - You are now able to evaluate someone´s mental and physicological state."
+		Print "Medium - You are now able to evaluate someoneÂ´s mental and physicological state."
 		
 		Else
 
@@ -63,9 +63,10 @@ While KeyDown(33)
 	
 	DisplayPerks ()
 
-We
-Global p_status1=0, p_status3=0,p_status4=0,p_status5=0 ; 1 - Hands Bound, 2 - Crippled (Doesen´t exist anymore, check p_body.bb), 3 - Blindfolded, 4 - On the ground, 5 - Falling.
+Wend
+
+Global p_status1=0, p_status3=0,p_status4=0,p_status5=0 ; 1 - Hands Bound, 2 - Crippled (DoesenÂ´t exist anymore, check p_body.bb), 3 - Blindfolded, 4 - On the ground, 5 - Falling.
 ;The way to do statuses presented above is not the most practical by far, they could be compressed into just one global variable, but in case
-;we ever need things like effect stacking, it will allow us to do so with fewer lines, the "crippled" status is used for streamlining so we don´t
+;we ever need things like effect stacking, it will allow us to do so with fewer lines, the "crippled" status is used for streamlining so we donÂ´t
 ;need to specify which limb is crippled for actions that require them all, like climbinh
 ;p_body renamed to health.bb
