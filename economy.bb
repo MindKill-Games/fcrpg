@@ -5,19 +5,24 @@ Include "health.bb"
 ;This requires health.bb to properly work, obviously.
 ;This takes a string parameter that will be the name of the doctor.
 ;All mentions of "The patient" must be replaced by the player´s name once that exists.
-Function MediShop (d_vname$) 
+Function MediShop (d_vname$)
+
 	
-	Case 0 health<50
+	If health<50
 
 		Print "Doctor "+d_vname$+" says: Yes, you look like you need my help, what is it?"
 
 		Goto medishop
+	
+	EndIf 
 
-	Case 1 health>=50
+	If health>=50
 
 		Print "Doctor "+d_vname$+" says: You look fine on the outside, but looks deceive, tell me what´s the problem."
 
 		Goto medishop
+
+	EndIf 
 
 	.medishop
 
@@ -71,17 +76,17 @@ Function MediShop (d_vname$)
 
 	.treatment
 
-	If limb1=1 Then limb1-1
+	If limb1=1 Then limb1=limb1-1
 
-	If limb2=1 Then limb2-1
+	If limb2=1 Then limb2=limb2-1
 
-	If limb3=1 Then limb3-1
+	If limb3=1 Then limb3=limb3-1
 
-	If limb4=1 Then limb4-1
+	If limb4=1 Then limb4=limb4-1
 
-	If limb5=1 Then limb5-1
+	If limb5=1 Then limb5=limb5-1
 
-	If bleedout=1 Then bleedout-1
+	If bleedout=1 Then bleedout=bleedout-1
 
 	If health<50 Then health=50
 
@@ -101,12 +106,10 @@ Function MediShop (d_vname$)
 
 	choosebuymedisupplies$=Input("Select: ")
 
-	If choosebuymedisupplies$=1 And money>=50 Then bandages+5
+	If choosebuymedisupplies$=1 And money>=50 Then bandages=bandages+5
 	
-	If choosebuymedisupplies$=2 And money>=75 Then healthkits+1
+	If choosebuymedisupplies$=2 And money>=75 Then healthkits=healthkits+1
 
 	If choosebuymedisupplies$=3 Then Print "You denied"
 
 End Function 
-
-	
