@@ -97,19 +97,23 @@ EndIf
 
 Function HealingMenu ()
 
-	Print "Healing Menu: "
+	Cls 
+
+	Text 130,130
 
 	Print "Please type an ID to select which body part to heal."
 
-	Print "1. Right arm."
-	
-	Print "2. Left arm."
+	Text 400,50,"Healing Menu",True,False 
 
-	Print "3. Right leg."
+	Text 400,80,"1. Right Arm",True,False 
 
-	Print "4. Left Leg.
+	Text 400,110,"2. Left Arm",True,False 
 
-	Print "5. Exit."
+	Text 400,150,"3. Right Leg",True,False
+
+	Text 400,180,"4. Left Leg",True,False 
+
+	Text 400,210,"5. Exit.",True,False 
 
 	healprompt$=Input("Select: ")
 
@@ -119,9 +123,13 @@ Function HealingMenu ()
 		
 		limb1=limb1 - 1
 
+		Cls
+
 		Print "Your right arm has been healed successfully."
 
 		Else
+
+			Cls
 
 			Print "You can´t do that right now."
 
@@ -133,9 +141,13 @@ Function HealingMenu ()
 
 		limb2=limb2 - 1
 
+		Cls
+
 		Print "Your left arm has been healed successfully."
 
 		Else
+
+			Cls
 
 			Print "You can´t do that right now."
 
@@ -147,9 +159,13 @@ Function HealingMenu ()
 
 		limb2=limb2 - 1
 
+		Cls
+
 		Print "Your right leg has been healed successfully."
 
 		Else
+
+			Cls
 
 			Print "You can´t do that right now."
 
@@ -161,14 +177,20 @@ Function HealingMenu ()
 
 		limb2=limb2 - 1
 
+		Cls
+
 		Print "Your left leg has been healed successfully."
 
 		Else
+
+			Cls
 
 			Print "You can´t do that right now."
 
 	EndIf 
 
+	Cls 
+
 	If healthprompt$=5 Then Print "Ok."
-	
-End Function 
+End Function
+
