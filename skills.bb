@@ -101,3 +101,10 @@ Function SkillMenu()
 			Print "This has not been unlocked yet."
 
 	EndIf 
+End Function 
+
+While KeyDown(REPLACE_ME)
+
+	SkillMenu()
+
+Wend 
