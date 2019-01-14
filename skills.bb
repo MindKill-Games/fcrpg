@@ -1,5 +1,7 @@
 ;Skills
 
+Include "health.bb"
+
 Global strength=0,speech=0,barter=0,investigation=0,intelligence=0
 
 Dim skillnames$(4)
@@ -70,3 +72,32 @@ Global p_status1=0, p_status3=0,p_status4=0,p_status5=0 ; 1 - Hands Bound, 2 - C
 ;we ever need things like effect stacking, it will allow us to do so with fewer lines, the "crippled" status is used for streamlining so we don´t
 ;need to specify which limb is crippled for actions that require them all, like climbinh
 ;p_body renamed to health.bb
+
+;Abilities list, currently only houses the Doctor skill.
+Global sk_meds=10
+
+Function SkillMenu()
+
+	Print "Skills:
+
+	Print "Doctor: "+sk_meds
+
+	Print "Abilities: "
+
+	If sk_meds>25
+
+		Print "You can examine yourself, type ''examine'' to get a detailed report on your state."
+
+	EndIf 
+
+	skmenuinput$=Input("Type: ")
+
+	If skmenuinput$="examine" Or skmenuinput$="Examine" And sk_meds>25
+
+		HealthMenu()
+
+		Else
+
+			Print "This has not been unlocked yet."
+
+	EndIf 
